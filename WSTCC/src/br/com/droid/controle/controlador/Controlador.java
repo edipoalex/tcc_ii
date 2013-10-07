@@ -8,6 +8,7 @@ import br.com.droid.exception.NoContentException;
 import br.com.droid.model.boletim.Boletim;
 import br.com.droid.model.usuario.Usuario;
 import br.com.droid.persistencia.entidadeDAO.boletim.BoletimDAO;
+import br.com.droid.persistencia.entidadeDAO.disciplina.DisciplinaDAO;
 //import br.com.droid.persistencia.entidadeDAO.disciplina.DisciplinaDAO;
 import br.com.droid.persistencia.entidadeDAO.usuario.UsuarioDAO;
 import br.com.droid.persistencia.hibernate.GenericHibernateDAO;
@@ -38,7 +39,7 @@ public class Controlador {
 
 	private UsuarioDAO usuarioDAO;
 	private BoletimDAO boletimDAO;
-//	private DisciplinaDAO disciplinaDAO;
+	private DisciplinaDAO disciplinaDAO;
 
 	public static Controlador getInstance() {
 		if (controlador == null) {
@@ -50,7 +51,7 @@ public class Controlador {
 	private Controlador() {
 		usuarioDAO = new UsuarioDAO();
 		boletimDAO = new BoletimDAO();
-		//disciplinaDAO = new DisciplinaDAO();
+		disciplinaDAO = new DisciplinaDAO();
 	}
 
 	public Usuario getVerifiaLogin(Integer login, Long senha) {

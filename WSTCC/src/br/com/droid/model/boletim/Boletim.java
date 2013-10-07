@@ -2,6 +2,8 @@ package br.com.droid.model.boletim;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import br.com.droid.model.disciplina.Disciplina;
+
 //import br.com.droid.model.disciplina.Disciplina;
 
 @XmlRootElement
@@ -15,7 +17,7 @@ public class Boletim {
 	private Double nota4;
 	private Double media;
 	private Integer faltas1;
-//	private Disciplina disciplina;
+	private Disciplina disciplina;
 	
 	
 	public Boletim(){
@@ -113,15 +115,15 @@ public class Boletim {
 	}
 
 
-//	public Disciplina getDisciplina() {
-//		return disciplina;
-//	}
-//
-//
-//	public void setDisciplina(Disciplina disciplina) {
-//		this.disciplina = disciplina;
-//	}
-//	
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	
 	
 
 }

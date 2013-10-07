@@ -7,8 +7,7 @@
 		<id name="login" column="mat_alu" type="java.lang.Integer">
 			<generator class="increment"></generator>
 		</id>
-<!-- 		<one-to-one name="disciplina" class="br.com.drodi.model.disciplina.Disciplina"></one-to-one> -->
-		
+		<many-to-one name="disciplina" column="cod_disc" class="br.com.droid.model.disciplina.Disciplina" fetch="join" ></many-to-one>
 		<property name="ano" column="ano" type="java.lang.Integer"></property>
 		<property name="semestre" column="semestre" type="java.lang.Integer"></property>
 		<property name="nota1" column="nota_1" type="java.lang.Double"></property>

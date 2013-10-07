@@ -27,7 +27,7 @@
 				
 		<mapping resource="br/com/droid/model/usuario/Usuario.hbm.xml" />
 		<mapping resource="br/com/droid/model/boletim/Boletim.hbm.xml" />
-<!--  		<mapping resource="br/com/droid/model/disciplina/Disciplina.hbm.xml" /> -->
+ 		<mapping resource="br/com/droid/model/disciplina/Disciplina.hbm.xml" />
 		
 	</session-factory>
 	
