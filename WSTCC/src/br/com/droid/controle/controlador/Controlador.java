@@ -6,10 +6,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import br.com.droid.exception.NoContentException;
 import br.com.droid.model.boletim.Boletim;
+import br.com.droid.model.historico.Historico;
+//import br.com.droid.model.historico.Historico;
 import br.com.droid.model.usuario.Usuario;
 import br.com.droid.persistencia.entidadeDAO.boletim.BoletimDAO;
 import br.com.droid.persistencia.entidadeDAO.disciplina.DisciplinaDAO;
-//import br.com.droid.persistencia.entidadeDAO.disciplina.DisciplinaDAO;
+import br.com.droid.persistencia.entidadeDAO.historico.HistoricoDAO;
+//import br.com.droid.persistencia.entidadeDAO.historico.HistoricoDAO;
 import br.com.droid.persistencia.entidadeDAO.usuario.UsuarioDAO;
 import br.com.droid.persistencia.hibernate.GenericHibernateDAO;
 import br.com.droid.persistencia.hibernate.HibernateUtil;
@@ -40,6 +43,7 @@ public class Controlador {
 	private UsuarioDAO usuarioDAO;
 	private BoletimDAO boletimDAO;
 	private DisciplinaDAO disciplinaDAO;
+	private HistoricoDAO historicoDAO;
 
 	public static Controlador getInstance() {
 		if (controlador == null) {
@@ -52,6 +56,7 @@ public class Controlador {
 		usuarioDAO = new UsuarioDAO();
 		boletimDAO = new BoletimDAO();
 		disciplinaDAO = new DisciplinaDAO();
+		historicoDAO = new HistoricoDAO();
 	}
 
 	public Usuario getVerifiaLogin(Integer login, Long senha) {
@@ -81,23 +86,6 @@ public class Controlador {
 		return usuarios;
 	}
 
-//	public void cadastrarUsuario(Usuario usuario) {
-//		Session session = null;
-//		Transaction transaction = null;
-//		try {
-//			session = criarSessao();
-//			usuarioDAO.setSession(session);
-//			transaction = iniciarTransacao(session);
-//			usuarioDAO.inserir(usuario);
-//			transaction.commit();
-//		} catch (Exception e) {
-//			transaction.rollback();
-//			e.printStackTrace();
-//		} finally {
-//			fecharSessao(session);
-//		}
-//	}
-
 	public List<Boletim> getBoletim(Usuario usuario) {
 		Session session = null;
 		List<Boletim> b = null;
@@ -110,18 +98,19 @@ public class Controlador {
 		}
 		return b;
 	}
+	
+	public List<Historico> getHistorico(Usuario usuario) {
+		Session session = null;
+		List<Historico> b = null;
+		try {
+			session = criarSessao();
+			historicoDAO.setSession(session);
+			b = historicoDAO.getHistorico(usuario);
+		} finally {
+			fecharSessao(session);
+		}
+		return b;
+	}
 
-//		public Disciplina getDisciplina(Integer id) {
-//			// TODO Auto-generated method stub
-//			Session session = null;
-//			Disciplina d = null;
-//			try {
-//				session = criarSessao();
-//				disciplinaDAO.setSession(session);
-//				d = disciplinaDAO.getDisciplina(id);
-//			} finally {
-//				fecharSessao(session);
-//			}
-//			return d;
-//		}
+
 }

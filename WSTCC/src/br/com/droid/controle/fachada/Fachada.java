@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import br.com.droid.controle.controlador.Controlador;
 import br.com.droid.exception.NoContentException;
 import br.com.droid.model.boletim.Boletim;
+import br.com.droid.model.historico.Historico;
+//import br.com.droid.model.historico.Historico;
 import br.com.droid.model.usuario.Usuario;
 
 public class Fachada {
@@ -58,6 +60,10 @@ public class Fachada {
 
 	public List<Boletim> getBoletim(Usuario usuario) {
 		return this.controlador.getBoletim(usuario);
+	}
+	
+	public List<Historico> getHistorico(Usuario usuario) {
+		return this.controlador.getHistorico(usuario);
 	}
 	
 	

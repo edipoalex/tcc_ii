@@ -15,7 +15,6 @@ public class Boletim {
 	private Double nota2;
 	private Double nota3;
 	private Double nota4;
-	private Double media;
 	private Integer faltas1;
 	private Disciplina disciplina;
 	
@@ -93,16 +92,6 @@ public class Boletim {
 	public void setNota4(Double nota4) {
 		this.nota4 = nota4;
 	}
-
-
-//	public Double getMedia() {
-//		return  ((getNota1() + getNota2() + getNota3()+ getNota4())/(4));
-//	}
-//
-//
-//	public void setMedia(Double media) {
-//		this.media = media;
-//	}
 
 
 	public Integer getFaltas1() {
