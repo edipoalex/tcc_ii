@@ -8,6 +8,7 @@ import br.com.droid.model.disciplina.Disciplina;
 
 @XmlRootElement
 public class Boletim {
+	private Integer codigo;
 	private Integer login; 
 	private Integer ano;
 	private Integer semestre;
@@ -111,6 +112,15 @@ public class Boletim {
 
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
+	}
+	
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 	
 	

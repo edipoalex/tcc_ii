@@ -4,10 +4,13 @@
 
 	<class name="br.com.droid.model.boletim.Boletim" table="turmas_matriculadas">
 
-		<id name="login" column="mat_alu" type="java.lang.Integer">
+		<id name="codigo" column="cd_turma_mat" type="java.lang.Integer">
 			<generator class="increment"></generator>
 		</id>
-		<many-to-one name="disciplina" column="cod_disc" class="br.com.droid.model.disciplina.Disciplina" fetch="join" ></many-to-one>
+		
+			
+		<many-to-one name="disciplina" column="cod_disc" class="br.com.droid.model.disciplina.Disciplina" fetch="join"></many-to-one>
+		<property name="login" column="mat_alu" type="java.lang.Integer"></property>
 		<property name="ano" column="ano" type="java.lang.Integer"></property>
 		<property name="semestre" column="semestre" type="java.lang.Integer"></property>
 		<property name="nota1" column="nota_1" type="java.lang.Double"></property>

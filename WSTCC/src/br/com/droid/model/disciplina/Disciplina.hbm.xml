@@ -5,11 +5,11 @@
 	<class name="br.com.droid.model.disciplina.Disciplina" table="disciplinas">
 
 		<id name="codigo" column="cod_disc" type="java.lang.Integer">
-			<generator class="increment"></generator>
+			<generator class="native"></generator>
 		</id>
 		
 		<property name="nome" column="nom_disc" type="java.lang.String"></property>
-		
+
 	
 		
 	</class>

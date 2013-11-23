@@ -17,8 +17,21 @@ import br.com.droid.persistencia.entidadeDAO.usuario.UsuarioDAO;
 import br.com.droid.persistencia.hibernate.GenericHibernateDAO;
 import br.com.droid.persistencia.hibernate.HibernateUtil;
 
+import org.hibernate.CacheMode;
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
+import org.hibernate.FlushMode;
+import org.hibernate.HibernateException;
+import org.hibernate.LockMode;
+import org.hibernate.ScrollMode;
+import org.hibernate.ScrollableResults;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.ResultTransformer;
 
 public class Controlador {
 
@@ -93,6 +106,7 @@ public class Controlador {
 			session = criarSessao();
 			boletimDAO.setSession(session);
 			b = boletimDAO.getBoletim(usuario);
+			
 		} finally {
 			fecharSessao(session);
 		}

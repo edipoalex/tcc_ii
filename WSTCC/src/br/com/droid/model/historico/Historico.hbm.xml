@@ -4,9 +4,10 @@
 
 	<class name="br.com.droid.model.historico.Historico" table="historicos_escolares">
 
-		<id name="login" column="mat_alu" type="java.lang.Integer">
+		<id name="codigo" column="cod_hist" type="java.lang.Integer">
 			<generator class="increment"></generator>
 		</id>
+		<property name="login" column="mat_alu" type="java.lang.Integer"></property>
 		<property name="ano" column="ano" type="java.lang.Integer"></property>
 		<property name="semestre" column="semestre" type="java.lang.Integer"></property>
 		<property name="media" column="media" type="java.lang.Double"></property>

@@ -6,6 +6,7 @@ import br.com.droid.model.disciplina.Disciplina;
 
 @XmlRootElement
 public class Historico {
+	private Integer codigo;
 	private Integer login; 
 	private Integer ano;
 	private Integer semestre;
@@ -61,6 +62,13 @@ public class Historico {
 		this.disciplina = disciplina;
 	}
 	
-	
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
 
 }
